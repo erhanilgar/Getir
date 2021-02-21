@@ -39,6 +39,8 @@ public class TestStepDef {
         password.sendKeys("hello");
         submit.click();
 
+     //   loginPage.getMenu("Atıştırmalık");
+
         Thread.sleep(2000);
         MobileElement goBasket=  driver.findElement(By.id("com.getir.casestudy.dev:id/ga_toolbar_getir10GABasketButton"));
         goBasket.click();
