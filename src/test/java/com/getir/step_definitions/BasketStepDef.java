@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
-import java.net.MalformedURLException;
+
 
 
 
@@ -28,9 +28,9 @@ public class BasketStepDef {
 
     @Then("The user go to basket and able to see {string} message")
     public void theUserGoToBasketAndAbleToSeeMessage(String expectedMessage) throws InterruptedException {
-      //  Thread.sleep(2000);
+        //  Thread.sleep(2000);
         loginPage.waitUntil(basketPage.goToBasket).click();
-      //  basketPage.goToBasket.click();
+        //  basketPage.goToBasket.click();
         Thread.sleep(1555);
         String actualMessage = basketPage.basketText.getText();
         System.out.println(actualMessage);
@@ -56,7 +56,7 @@ public class BasketStepDef {
         Thread.sleep(1333);
 
         basketPage.navigateLeft.click();
-       // loginPage.waitUntil(basketPage.navigateLeft).click();
+        // loginPage.waitUntil(basketPage.navigateLeft).click();
 
     }
 
@@ -80,4 +80,6 @@ public class BasketStepDef {
         Assert.assertEquals(expectedMessage,actualMessage);
 
     }
+
+
 }

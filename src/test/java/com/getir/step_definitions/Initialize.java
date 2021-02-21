@@ -41,14 +41,14 @@ public class Initialize {
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
-        desiredCapabilities.setCapability(MobileCapabilityType.VERSION, "8.0");
-        desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel_2");
+        desiredCapabilities.setCapability(MobileCapabilityType.VERSION, "7.0");
+        desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel_21");
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
-        desiredCapabilities.setCapability("appPackage", "com.getir.casestudy.dev");
-        desiredCapabilities.setCapability("appActivity", "com.getir.casestudy.modules.splash.ui.SplashActivity");
+      //  desiredCapabilities.setCapability("appPackage", "com.getir.casestudy.dev");
+      //  desiredCapabilities.setCapability("appActivity", "com.getir.casestudy.modules.splash.ui.SplashActivity");
 
-        //  desiredCapabilities.setCapability("app","https://cdn.getir.com/misc/case-studies/getir-testing-case-study.apk");
+         desiredCapabilities.setCapability("app","https://cdn.getir.com/misc/case-studies/getir-testing-case-study.apk");
 
         try {
             driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
