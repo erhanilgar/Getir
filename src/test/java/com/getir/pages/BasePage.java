@@ -39,7 +39,7 @@ public class BasePage {
 //
 //    }
 //
-//
+////android.widget.TextView[@text='İçecek']"
 //}
 ////*[text()='SOMETEXT']
 ////*[@text()='SOMETEXT']

@@ -20,12 +20,11 @@ import java.net.URL;
 
 public class Initialize {
     public static AndroidDriver<MobileElement> driver;
-    WebDriverWait wait;
 
     @Before
     public  void setup() {
         initializeDriver();
-        wait=new WebDriverWait(driver,10);
+
         driver.resetApp();
     }
 
