@@ -1,5 +1,6 @@
 package com.getir.step_definitions;
 
+import com.getir.Utilities.ScrollHelper;
 import com.getir.pages.BasketPage;
 import com.getir.pages.LoginPage;
 import io.cucumber.java.en.And;
@@ -34,13 +35,13 @@ public class BasketStepDef {
         String actualMessage = basketPage.basketText.getText();
         System.out.println(actualMessage);
         Assert.assertEquals(expectedMessage,actualMessage);
-        basketPage.navigateLeft.click();
+
 
     }
 
     @Then("The user navigate to main menu and click on the {string} button")
     public void theUserNavigateToMainMenuAndClickOnTheButton(String menu) {
-
+        basketPage.navigateLeft.click();
         loginPage.getMenu(menu);
 
     }
@@ -48,8 +49,25 @@ public class BasketStepDef {
     @And("The add two items and go to basket")
     public void theAddTwoItemsAndGoToBasket() throws InterruptedException {
         loginPage.waitUntil(basketPage.addCikolatali).click();
-        Thread.sleep(1000);
+       // Thread.sleep(1000);
         basketPage.addSaka.click();
         basketPage.goToBasket.click();
+        basketPage.navigateLeft.click();
+        basketPage.navigateLeft.click();
+    }
+
+    @And("The user add one item and go to basket and delete all items")
+    public void theUserAddOneItemAndGoToBasketAndDeleteAllItems() {
+        new ScrollHelper().scrollVerticalHelper("Ürün 38");
+        basketPage.addDraje.click();
+        basketPage.goToBasket.click();
+    }
+
+    @And("The user should be able to see {string} message")
+    public void theUserShouldBeAbleToSeeMessage(String expectedMessage) {
+        String actualMessage = basketPage.basketText.getText();
+        System.out.println(actualMessage);
+        Assert.assertEquals(expectedMessage,actualMessage);
+
     }
 }
